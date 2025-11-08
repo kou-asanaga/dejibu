@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>金沢市デジ部 | デジタルスキルを育む職員コミュニティ</title>
+    <style>
+      :root {
+        --primary: #0b5f8a;
+        --secondary: #f6b620;
+        --bg: #f5f7fa;
+        --text: #273043;
+        --muted: #6c7a89;
+        font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      header {
+        background: linear-gradient(120deg, rgba(11, 95, 138, 0.92), rgba(14, 123, 167, 0.9)),
+          url("https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=1600&q=80")
+            center/cover;
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+      }
+
+      header h1 {
+        font-size: clamp(2.4rem, 4vw, 3.4rem);
+        margin: 0 0 16px;
+        letter-spacing: 0.05em;
+      }
+
+      header p {
+        margin: 0 auto 28px;
+        max-width: 640px;
+        font-size: 1.1rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .cta-buttons a {
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .cta-buttons a.primary {
+        background: var(--secondary);
+        color: #1f2933;
+        box-shadow: 0 8px 20px rgba(246, 182, 32, 0.4);
+      }
+
+      .cta-buttons a.secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+      }
+
+      .cta-buttons a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(11, 95, 138, 0.3);
+      }
+
+      main {
+        padding: 60px 20px 90px;
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
+      section {
+        margin-bottom: 80px;
+        background: white;
+        border-radius: 18px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      section h2 {
+        margin-top: 0;
+        color: var(--primary);
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+        margin-top: 32px;
+      }
+
+      .feature-card {
+        background: var(--bg);
+        border-radius: 16px;
+        padding: 24px;
+        border: 1px solid #e6edf5;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 28px rgba(15, 23, 42, 0.12);
+      }
+
+      .feature-card h3 {
+        margin-top: 0;
+        color: var(--primary);
+      }
+
+      .icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: rgba(11, 95, 138, 0.1);
+        color: var(--primary);
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
+
+      .timeline {
+        margin-top: 36px;
+        border-left: 3px solid var(--secondary);
+        padding-left: 24px;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -35px;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--secondary);
+        box-shadow: 0 0 0 6px rgba(246, 182, 32, 0.25);
+      }
+
+      .community {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
+        align-items: center;
+      }
+
+      .community img {
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+        object-fit: cover;
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px 20px 60px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: var(--primary);
+      }
+
+      @media (max-width: 600px) {
+        section {
+          padding: 28px;
+        }
+
+        header {
+          padding: 60px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>金沢市デジ部</h1>
+      <p>
+        デジタルに関心のある職員が集まり、学び合い、チャレンジを共有するコミュニティ。日々の業務に活かせるスキルを磨き、金沢市の行政サービスをアップデートしていきましょう。
+      </p>
+      <div class="cta-buttons">
+        <a class="primary" href="#join">参加方法を確認する</a>
+        <a class="secondary" href="#schedule">次回イベントを見る</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="vision">
+        <h2>デジ部が目指すもの</h2>
+        <p>
+          金沢市デジ部は、庁内の職員が自主的にデジタルスキルを高める学びの場です。専門部署の垣根を越えてメンバーが集まり、最新のAI活用事例や業務改善のアイデアを持ち寄ることで、組織全体のDX推進力を高めます。
+        </p>
+        <div class="features">
+          <div class="feature-card">
+            <div class="icon">💡</div>
+            <h3>仕事に効く実践知</h3>
+            <p>
+              日常業務で使えるノウハウを重視。AIによる文書作成、データ整理、RPAなど、すぐに活かせるスキル習得を支援します。
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🤝</div>
+            <h3>組織を越えたつながり</h3>
+            <p>
+              部署や職位を問わず参加できる横断コミュニティ。アイデアを共有し、互いの強みを掛け合わせて挑戦を後押しします。
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🚀</div>
+            <h3>チャレンジを支える環境</h3>
+            <p>
+              自主勉強会、ハンズオン、外部との交流イベントを通じて、挑戦する人をサポート。小さな改善から大きな変革へとつなげます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule">
+        <h2>活動メニュー</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>AI活用ラボ</h3>
+            <p>
+              ChatGPTや画像生成AIなどの最新ツールを試し、業務で活かすアイデアをディスカッション。成功事例や失敗談も共有します。
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h3>PCスキル強化ハンズオン</h3>
+            <p>
+              Excel関数、Power Automate、Google Workspaceなど、日常業務を効率化するテクニックをワークショップ形式で学びます。
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h3>クロスセクター交流</h3>
+            <p>
+              スタートアップや他自治体のDX担当者を招き、最新トレンドや連携の可能性を探る交流会を開催します。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="community">
+        <h2>こんな人におすすめ</h2>
+        <div class="community">
+          <div>
+            <ul>
+              <li>デジタルに興味はあるが、何から始めればよいか分からない方</li>
+              <li>部署内で相談できる仲間が欲しいと感じている方</li>
+              <li>業務改善にチャレンジしたいが一歩踏み出せていない方</li>
+              <li>外部の知見を取り入れて新しい発想を得たい方</li>
+            </ul>
+            <p>
+              初心者も大歓迎。デジ部は、学びたい気持ちのあるすべての職員を応援します。
+            </p>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80"
+            alt="勉強会でディスカッションする人々"
+          />
+        </div>
+      </section>
+
+      <section id="join">
+        <h2>参加方法</h2>
+        <p>
+          デジ部は有志によるオープンなコミュニティです。参加方法はシンプル。まずは以下のフォームから登録し、最新の活動情報を受け取りましょう。
+        </p>
+        <div class="features">
+          <div class="feature-card">
+            <div class="icon">📝</div>
+            <h3>1. エントリー</h3>
+            <p>
+              専用フォームに所属・興味分野を記入し、デジ部メールリストに登録します。
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">👥</div>
+            <h3>2. オリエンテーション</h3>
+            <p>
+              月1回のオンライン説明会で活動内容や参加の仕方を紹介。初参加でも安心です。
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">✨</div>
+            <h3>3. 学びと実践</h3>
+            <p>
+              興味のある勉強会やプロジェクトに参加して、学びを業務に活かしましょう。
+            </p>
+          </div>
+        </div>
+        <div class="cta-buttons" style="margin-top: 32px">
+          <a class="primary" href="https://forms.gle/" target="_blank" rel="noopener"
+            >エントリーフォーム（準備中）</a
+          >
+          <a class="secondary" href="mailto:digibu@city.kanazawa.lg.jp">問い合わせる</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        主催：金沢市役所 デジ部（有志の職員コミュニティ）／ お問い合わせ：
+        <a href="mailto:digibu@city.kanazawa.lg.jp">digibu@city.kanazawa.lg.jp</a>
+      </p>
+      <p>© 2024 金沢市デジ部。無断転載を禁じます。</p>
+    </footer>
+  </body>
+</html>
